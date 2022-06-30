@@ -189,6 +189,9 @@ if (heroku.dockerBuildArgs) {
 
     execSync(`git config user.name "Heroku-Deploy"`);
     execSync(`git config user.email "${heroku.email}"`);
+    execSync(
+      'git add -A && git commit -m "Commited changes from previous actions"'
+    );
     // const status = execSync("git status --porcelain").toString().trim();
     //   if (status) {
     //     execSync(
